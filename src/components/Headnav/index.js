@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import { useHistory } from "react-router-dom";
 
 import '../../css/components/headnav.css'
@@ -14,7 +14,7 @@ const Headnav = () => {
             <div className="only-margin">
                 <div className='header-' >
                     <div className= 'header-logo'>
-                        <img src={Logo} style={{width: 40, height:40}}/>
+                        <img src={Logo} style={{width: 40, height:40}} alt="hahaha"/>
                     </div>
                     <div className='header-icon'>
                         <h2>My Dashboard</h2>
