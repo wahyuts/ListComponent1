@@ -1,18 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../css/components/Mapp.css'
-import * as parkData from "../data/skateboard-parks.json"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import {Icon} from 'leaflet';
+import useSwr from 'swr'; // need npm install swr
 
-const skater = new Icon ({
-    iconUrl: './skateboarding.svg',
-    iconSize: [25,25]
-})
+const fetcher = (...args) => fetch(...args).then(response => response.json());
 
-const Mapp = () => {
-    const defaultPosition = [45.421532, -75.697189];
 
-    const [activePark, setActivePark] = useState(null)
+const MappViaSwrAPI = () => {
+    const url = 
+        "https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2019-10";
+    const {data,error} = useSwr(url,{fetcher});
+    const crimes = data && !error ? data.slice(0,50) : [];
+
+    const defaultPosition = [52.629835, -1.133005];
+
     return ( 
             <div className="map-width-cont margin-map">
                 <MapContainer
@@ -25,22 +26,19 @@ const Mapp = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
 
-                    {parkData.features.map(park => (
-                        <Marker key={park.properties.PARK_ID} 
+                    {crimes.map(crime => (
+                        <Marker key={crime.id} 
                                 position={[
-                                    park.geometry.coordinates[1],
-                                    park.geometry.coordinates[0],
+                                    crime.location.latitude,
+                                    crime.location.longitude,
                                 ]}
-
-                                icon={skater}
                         >
                             <Popup>
-                            <div>
-                                <h2>{park.properties.NAME}</h2>
-                                <p>{park.properties.DESCRIPTIO}</p>
-                            </div>
+                                <h2>{crime.category}</h2>
+                                <p>{crime.location.street.name}</p>
                             </Popup>
                         </Marker>
+                            
                     ))}
 
                 </MapContainer>
@@ -49,4 +47,4 @@ const Mapp = () => {
      );
 }
  
-export default Mapp;
+export default MappViaSwrAPI;
