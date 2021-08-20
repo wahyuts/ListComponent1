@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom"
+
+import Headnav from './components/Headnav'
 import './App.css';
+import Homepage from './pages/Homepage';
+import Graphic from './pages/Graphic';
+import SuperMap from './pages/SuperMap';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Mapp/> */}
+      <Router>
+          <Headnav/>
+          <Route
+              path="/"
+              exact
+              component={Homepage}
+          />
+          <Route
+              path="/Graph"
+              component={Graphic}
+          />
+          <Route
+              path="/Map"
+              component={SuperMap}
+          />
+      </Router>
     </div>
   );
 }

@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+@font-face { /*deklarasi font sendiri(bukan google font) agar bisa dikenali css dan dipake*/
+  font-family: "Font Genshin";
+  src: url('./genshin.ttf'); /*taro file ttf nya di public dan tulis baris kode ini untuk pick up*/
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html {
+  height:100%;
+  width:100%;
+  background: rgb(246,240,240);
+  background: linear-gradient(13deg, rgba(246,240,240,1) 10%, rgba(218,244,255,0.9890567050890976) 51%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
 }

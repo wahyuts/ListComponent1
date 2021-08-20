@@ -1,0 +1,98 @@
+.cont-headNav{
+    width:100%; 
+    background:#ffffff ;
+    display:flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+.only-margin{
+    margin:20px 30px;
+}
+
+.header- {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size:1.5rem;
+}
+
+.signin-icon{
+    display: flex;
+    cursor:default;
+}
+
+.nav-link{
+    display: flex;
+    justify-content: space-around;
+    font-size:1.8rem;
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.Link{
+    text-decoration: none;
+}
+
+.width-cont-link{
+    width: 1000px;
+    background:red;
+}
+
+.searchBar {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10px;
+    border: 2px solid #EDA3B5;
+    justify-content: space-between;
+}
+
+.sinput{
+    width: 95%;
+    padding-left:1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-right: 0.5% ;
+    border: none;
+}
+
+.sinputProduct{
+    width: 100%;
+    padding-left:1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-right: 0.5% ;
+}
+
+.sinput:focus {
+    width: 95%;
+    outline:none;
+    border: none;
+}
+
+.sinputProduct:focus {
+    width: 100%;
+    outline:none;
+}
+.buttonSearch {
+    display: flex;
+    width: 40px;
+    margin-right: 0.3%;
+    margin-top: 0.3%;
+    margin-bottom: 0.3%;
+    align-items: center;
+    justify-content: center;
+    background-color: #EDA3B5;
+    color: #ffffff;
+}
+.buttonSearch:focus {
+    outline: none;
+}
+
+.buttonSearh:hover{
+    background-color: #f1bdca;
+}
