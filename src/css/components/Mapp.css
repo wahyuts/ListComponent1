@@ -1,6 +1,8 @@
 .map-width-cont{
+    position: fixed;
     width: 62%;
     height: 50vh;
+    z-index: -1;
 }
 
 .margin-map{

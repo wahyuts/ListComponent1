@@ -1,0 +1,14 @@
+.flex-footer{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.Link-footer{
+    color: #fff;
+    text-decoration: none;
+}
+
+.Link-footer:hover{
+    color:#d41a1a
+}
